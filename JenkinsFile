@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     stages{
-        stage("GitHUb"){
+        stage('Github'){
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'GithubCredentials', url: 'https://github.com/ErnestoJH90/NodeJs.git']]])
             }
