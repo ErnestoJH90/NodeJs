@@ -6,20 +6,20 @@ pipeline{
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'GithubCredentials', url: 'https://github.com/ErnestoJH90/NodeJs.git']]])
             }
-        //stage('SonarQube Scanner'){
-          //  steps{
-            //    script{
-              //      def scannerHome = tool 'SonarQubeScanner';
-                //    withSonarQubeEnv('SonarQube'){
-                  //      bat 'sonar-scanner.bat '
-                    //    -D"sonar.projectKey=NodeJs" 
-                      //  -D"sonar.sources=." 
-                        //-D"sonar.host.url=http://localhost:9000"
-                        //-D"sonar.login=d2eafebffd806b8cf00b119bcb651f56431b6d4d"
-             //       }
-               // }
-           // }
-        //}
+        stage('SonarQube Scanner'){
+            steps{
+                script{
+                    def scannerHome = tool 'SonarQubeScanner';
+                    withSonarQubeEnv('SonarQube'){
+                        bat 'sonar-scanner.bat'
+                        -D sonar.projectKey=NodeJs 
+                        -D sonar.sources=.
+                        -D sonar.host.url=http://localhost:9000
+                        -D sonar.login=d2eafebffd806b8cf00b119bcb651f56431b6d4d'
+                    }
+               }
+            }
+        }
             post{
                 always{
                     echo "========always========"
