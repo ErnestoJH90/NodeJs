@@ -17,7 +17,7 @@ pipeline{
                       //  -D 'sonar.sources=.'
                       //  -D 'sonar.host.url=http://localhost:9000'
                         //-D 'sonar.login=d2eafebffd806b8cf00b119bcb651f56431b6d4d'
-                         sonar-scanner.bat '-D sonar.projectKey=JS -D sonar.sources=. -D sonar.host.url=http://localhost:9000 -D sonar.login=346dc676a0a94dffc4c97d653dafe06d892fbd8a'
+                         sonar-scanner.bat -D sonar.projectKey=JS -D sonar.sources=. -D sonar.host.url=http://localhost:9000 -D sonar.login=346dc676a0a94dffc4c97d653dafe06d892fbd8a
                     }
                 }
             }
