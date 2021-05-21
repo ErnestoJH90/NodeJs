@@ -14,9 +14,9 @@ pipeline{
                     withSonarQubeEnv('SonarQube'){
                        bat 'sonar-scanner.bat \
                            -Dsonar.projectKey=NodeJs \
-                           -Dsonar.sources=. 
-                           '-Dsonar.host.url=http://localhost:9000' 
-                           '-Dsonar.login=d2eafebffd806b8cf00b119bcb651f56431b6d4d'
+                           -Dsonar.sources=. \
+                           -Dsonar.host.url=http://localhost:9000 \
+                           -Dsonar.login=d2eafebffd806b8cf00b119bcb651f56431b6d4d'
                    }
                 }
             }  
