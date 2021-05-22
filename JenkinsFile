@@ -2,11 +2,11 @@ pipeline{
     agent any
 
     stages{
-        stage('Github'){
+        stage('GitHub'){
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'GithubCredentials', url: 'https://github.com/ErnestoJH90/NodeJs.git']]])
             }
-        }    
+        }
         stage('SonarQube Scanner'){
             steps{
                 script{
@@ -21,5 +21,10 @@ pipeline{
                 }
             }  
         }
+        stage(''){
+            steps{
+                echo '....continue to....'
+            }
+        }    
     }
 }
